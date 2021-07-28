@@ -2,3 +2,7 @@
 
 # Projeto: Credit Card Fraud Detection
 Projeto para detecção de fraude em cartão de crédito
+
+<p align="center">
+  <img src="imagem-tc.png" >
+</p>
