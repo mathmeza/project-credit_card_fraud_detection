@@ -75,4 +75,14 @@ Após a extração, verificamos cerca de **284.807 linhas** e **31 colunas**. Ao
 - `Amount` - Valor em USD da transação;
 - `Class` - Identificador se foi realmente fraude ou não.
 
+Como trata-se de um dataset que possivelmente foi tratado, tendo em vista já veio com colunas que passaram por um processo de PCA, não teve dados nulos. Por outro lado, um ponto importante que ao decorrer das análises exploratórias, identificamos que a coluna `Amount` possui outliers que poderiam impactar em nossa modelagem e para que esse impacto não seja negativo no processo de modelagem, fizemos uma normalização com os dados dessa coluna, tentando deixar um pouco mais distribuído.
+
+Segue abaixo um exemplo do gráfico de boxplot mostrando um pouco sobre a questão de outliers da variável `Amount`
+
+<p align="center">
+  <img src="grafico_boxplot.png" >
+</p>
+
+---
+
 
