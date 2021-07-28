@@ -20,7 +20,7 @@ Devido este problema que tende a aumentar, é de suma importância que as empres
 
 ---
 
-Para a obtenção dos dados, utilizamos o [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud) pois trata-se de um site super rico, onde há diversos datasets para trabalharmos e tendo nosso problema que queremos resolver detalhado, aproveitamos o dataset de fraude nos cartões de crédito.
+Para a obtenção dos dados, utilizei o [Kaggle](https://www.kaggle.com/mlg-ulb/creditcardfraud) pois trata-se de um site super rico, onde há diversos datasets para trabalharmos e tendo o problema que queremos resolver, aproveitamos o dataset de fraude em cartões de crédito.
 
 Em relação aos próximos passos, precisamos importar uma série de bibliotecas para trabalharmos neste nootebook. Seguem as bibliotecas:
 
@@ -80,9 +80,13 @@ Como trata-se de um dataset que possivelmente foi tratado, tendo em vista já ve
 Segue abaixo um exemplo do gráfico de boxplot mostrando um pouco sobre a questão de outliers da variável `Amount`
 
 <p align="center">
-  <img src="grafico_boxplot.png" >
+  <img src="grafico_boxplot.PNG" >
 </p>
 
 ---
 
+No processo de análise exploratória foi identificado um **ENORME desbalanceamento** na variável `Class` que é nossa variável target onde classifica transações que são fraudadulentas com o número 1 e os não-fraudadulentas com o número 0.
+Enfatizo esse desbalanceamento porque do total de linhas 284.807, apenas 0.17% (492) são tratações fraudulentas e isso com certeza impacta em nosso modelo, nos trazendo grandes riscos de passarmos por um problema de OverFitting (Em resumo: Modelo muito ajustado aos dados que foi treinado, porém, não performa bem aos dados que não conhece).
+
+Para diminuir esse risco de OverFitting, foi utilizado técnicas
 
