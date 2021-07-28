@@ -86,7 +86,7 @@ Segue abaixo um exemplo do gráfico de boxplot mostrando um pouco sobre a quest�
 ---
 
 No processo de análise exploratória foi identificado um **ENORME desbalanceamento** na variável `Class` que é nossa variável target onde classifica transações que são fraudadulentas com o número 1 e os não-fraudadulentas com o número 0.
-Enfatizo esse desbalanceamento porque do total de linhas 284.807, apenas 0.17% (492) são tratações fraudulentas e isso com certeza impacta em nosso modelo, nos trazendo grandes riscos de passarmos por um problema de OverFitting (Em resumo: Modelo muito ajustado aos dados que foi treinado, porém, não performa bem aos dados que não conhece).
+Enfatizo esse desbalanceamento porque do total de linhas 284.807, apenas 0.17% (492) são trasações fraudulentas e isso com certeza impacta em nosso modelo, nos trazendo grandes riscos de passarmos por um problema de OverFitting (Em resumo: Modelo muito ajustado aos dados que foi treinado, porém, não performa bem aos dados que não conhece).
 
-Para diminuir esse risco de OverFitting, foi utilizado técnicas
+Para diminuir esse risco de OverFitting, foi utilizado técnicas UnderSampling e OverSampling que basicamente ajudam nos ajustes de balanceamento.
 
