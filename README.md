@@ -90,3 +90,45 @@ Enfatizo esse desbalanceamento porque do total de linhas 284.807, apenas 0.17% (
 
 Para diminuir esse risco de OverFitting, foi utilizado técnicas UnderSampling e OverSampling que basicamente ajudam nos ajustes de balanceamento.
 
+Outro ponto na análise exploratória, criamos uma visualizacão para identificar a correlação entre as variáveis, pois isso nos ajuda a entender como as features estão se relacionando entre si:
+
+<p align="center">
+  <img src="grafico_corr.PNG" >
+</p>
+
+As variáveis que possuem redução de dimensionalidade não se relacionam entre si o que pode ser em decorrência do próprio PCA, entretanto, conseguimos ver algumas correlações um pouco interessantes entre essas variáveis e `Time`, `Amount` e `Class`.
+
+A variável `Class` que é a nossa variável target, possui correlação com as variáveis:
+
+- Correlação positiva com -> V4, V11
+- Correlação negativa com -> V14, V17
+
+A variável `Amount`, possui correlação com as variáveis:
+
+- Correlação positiva com -> V6, V7, v20
+- Correlação negativa com -> V2, V5
+
+A variável `Time`, possui correlação com as variáveis:
+
+- Correlação positiva com -> V5
+- Correlação negativa com -> V3
+
+---
+
+No processo de modelagem, selecionamos alguns modelos mais utilizados nesse método de classificação e fizemos algumas análises entre eles, durante o processo, verificamos que para os dados não vistos, alguns modelos não estavam performando tão bem se comparado com os dados de treino e por isso, realizei alguns ajustes nas bases e procedimentos de UnderSampling e OverSampling e inclusive, antes da separação dos dados de treino e teste, por segurança, separei mais alguns dados aleatórios para teste também para nos ajudar a ter uma ideia mais real da utilização dos modelos.
+
+Os modelos selecionados para as análises finais foram os `XGBClassifier`, `ExtraTreesClassifier` e `LogisticRegression`. Segue a matriz de confusão após ajustes de hiper-parâmetros:
+
+<p align="center">
+  <img src="grafico_matriz_confusion.PNG" >
+</p>
+
+O modelo com melhor performance foi o Logistic Regression com:
+- Acurácia: 91.5%
+- Precisão: 100%
+- Recall: 88%
+- F1-Score: 93.6%
+
+---
+
+Considero um resultado positivo, levando em conta que nossa base de dados possui um enorme problema de desbalanceamento e para evitar isso tivemos que utilizar algumas técnicas de sobreajustes conforme está detalhado no script. Acredito que de todo este processo, temos oportunidades na questão do balanceamento dos dados, sugiro para próximos passos avaliar uma forma melhor de testar os dados, tendo em vista que pegamos uma amostra de teste pequena em comparação com todo o dataset.
